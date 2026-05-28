@@ -59,7 +59,7 @@ away_tip: Number(gast),
 
 if (error) {
 console.log(error)
-alert("Fehler beim Speichern")
+alert(JSON.stringify(error))
 return
 }
 
