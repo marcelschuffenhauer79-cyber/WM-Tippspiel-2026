@@ -16,7 +16,6 @@ if (!name || !spieler) {
 alert("Bitte alle Felder ausfüllen")
 return
 }
-
 localStorage.setItem("wm_name", name)
 localStorage.setItem("wm_spieler", spieler)
 
