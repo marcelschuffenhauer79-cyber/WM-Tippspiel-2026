@@ -19,7 +19,7 @@ export default function Tabelle() {
 
 const [spieler, setSpieler] = useState<Spieler[]>([])
 
-const [results, setResults] = useState<Result[]>([])
+const [results, setResults] = useState<any[]>([])
 
 useEffect(() => {
 ladeTabelle()
