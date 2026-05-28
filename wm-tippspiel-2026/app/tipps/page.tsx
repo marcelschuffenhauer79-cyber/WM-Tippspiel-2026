@@ -14,13 +14,15 @@ gast: string
 }>({})
 
 useEffect(() => {
+const user = localStorage.getItem("wm_name")
+
+if (user) {
 ladeTipps()
-},
-[])
+}
+}, [])
 
 const ladeTipps = async () => {
 const user = localStorage.getItem("wm_name")
-if (!user) return
 
 const { data } = await supabase
 .from("tipps")
