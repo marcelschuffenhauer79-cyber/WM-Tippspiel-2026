@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 
 export default function Tipps() {
 
+    const [geladen, setGeladen] = useState (false)
 
 const [tipps, setTipps] = useState<{
 [key: number]: {
@@ -15,11 +16,17 @@ gast: string
 }>({})
 
 useEffect(() => {
+const user = localStorage.getItem("wm_name")
+
+if (user) {
 ladeTipps()
+setGeladen(true)
+}
 }, [])
 
 const ladeTipps = async () => {
 const user = localStorage.getItem("wm_name")
+if (!user) return
 
 const { data } = await supabase
 .from("tipps")
