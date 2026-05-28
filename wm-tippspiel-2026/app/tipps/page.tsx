@@ -6,8 +6,6 @@ import { useEffect, useState } from "react"
 
 export default function Tipps() {
 
-    const [geladen, setGeladen] = useState (false)
-
 const [tipps, setTipps] = useState<{
 [key: number]: {
 heim: string
@@ -16,13 +14,9 @@ gast: string
 }>({})
 
 useEffect(() => {
-const user = localStorage.getItem("wm_name")
-
-if (user) {
 ladeTipps()
-setGeladen(true)
-}
-}, [])
+},
+[])
 
 const ladeTipps = async () => {
 const user = localStorage.getItem("wm_name")
@@ -38,8 +32,8 @@ const formatierteTipps: any = {}
 
 data.forEach((tipp: any) => {
 formatierteTipps[tipp.match_id] = {
-heim: tipp.home_tip?.toString() || "",
-gast: tipp.away_tip?.toString() || "",
+heim: tipp.home_tip?.toString() ?? "",
+gast: tipp.away_tip?.toString() ?? "",
 }
 })
 

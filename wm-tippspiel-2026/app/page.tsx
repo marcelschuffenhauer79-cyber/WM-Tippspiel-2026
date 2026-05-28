@@ -19,6 +19,13 @@ return
 localStorage.setItem("wm_name", name)
 localStorage.setItem("wm_spieler", spieler)
 
+const existingUser = await supabase
+.from("users")
+.select("*")
+.eq("name", name)
+.single()
+
+if (!existingUser.data) {
 await supabase
 .from("users")
 .insert([
@@ -27,6 +34,7 @@ name,
 favorite_player: spieler
 }
 ])
+}
 setEingeloggt(true)
 }
 
