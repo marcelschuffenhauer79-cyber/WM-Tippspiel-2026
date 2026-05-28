@@ -24,8 +24,6 @@ return
 alert("Registrierung erfolgreich")
 }
 
-}
-
 return (
 <main
 className="min-h-screen bg-cover bg-center text-white"
@@ -81,7 +79,7 @@ Einloggen
 <div className="bg-zinc-900 rounded-3xl p-10 text-center max-w-xl">
 
 <h2 className="text-4xl font-bold text-green-400 mb-4">
-Willkommen {name} 👋
+Willkommen {email} 👋
 </h2>
 
 <p className="text-zinc-300 text-xl">
