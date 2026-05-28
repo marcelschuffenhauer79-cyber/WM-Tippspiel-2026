@@ -112,13 +112,13 @@ Tipps gesperrt
 <div className="flex items-center gap-2">
 <input
 type="number"
-value={tipps[index]?.heim || ""}
+value={tipps[spiel.id]?.heim || ""}
 disabled={gesperrt}
 onChange={(e) =>
 setTipps({
 ...tipps,
-[index]: {
-...tipps[index],
+[spiel.id]: {
+...tipps[spiel.id],
 heim: e.target.value,
 },
 })
@@ -130,13 +130,13 @@ className="w-16 bg-zinc-800 border border-zinc-700 rounded-lg px-2 py-1"
 
 <input
 type="number"
-value={tipps[index]?.gast || ""}
+value={tipps[spiel.id]?.gast || ""}
 disabled={gesperrt}
 onChange={(e) =>
 setTipps({
 ...tipps,
-[index]: {
-...tipps[index],
+[spiel.id]: {
+...tipps[spiel.id],
 gast: e.target.value,
 },
 })
