@@ -46,7 +46,7 @@ Tippen. Punkten. Gewinnen.
 <div className="bg-zinc-900 rounded-3xl p-8 w-full max-w-md shadow-2xl">
 
 <h2 className="text-3xl font-semibold mb-6">
-Anmeldung
+Anmeldun
 </h2>
 
 <input
