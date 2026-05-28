@@ -23,7 +23,19 @@ return
 
 alert("Registrierung erfolgreich")
 }
+const handleLogin = async () => {
+const { error } = await supabase.auth.signInWithPassword({
+email,
+password,
+})
 
+if (error) {
+alert(error.message)
+return
+}
+
+alert("Erfolgreich eingeloggt")
+}
 return (
 <main
 className="min-h-screen bg-cover bg-center text-white"
