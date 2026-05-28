@@ -19,17 +19,20 @@ ladeTipps()
 }, [])
 
 const ladeTipps = async () => {
+const user = localStorage.getItem("wm_name")
+
 const { data } = await supabase
 .from("tipps")
 .select("*")
+.eq("user_name", user)
 
 if (data) {
 const formatierteTipps: any = {}
 
 data.forEach((tipp: any) => {
 formatierteTipps[tipp.match_id] = {
-heim: tipp.home_goals?.toString() || "",
-gast: tipp.away_goals?.toString() || "",
+heim: tipp.home_tip?.toString() || "",
+gast: tipp.away_tip?.toString() || "",
 }
 })
 
