@@ -34,7 +34,7 @@ backgroundImage:
 >
 
 <h1 className="text-6xl font-bold text-yellow-400 mb-4">
-Neues Login Test
+WM Tippspiel 2026
 </h1>
 
 <p className="text-xl text-zinc-300 mb-10">
@@ -46,7 +46,7 @@ Tippen. Punkten. Gewinnen.
 <div className="bg-zinc-900 rounded-3xl p-8 w-full max-w-md shadow-2xl">
 
 <h2 className="text-3xl font-semibold mb-6">
-LOGIN NEU
+Anmeldung
 </h2>
 
 <input
