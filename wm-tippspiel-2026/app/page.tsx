@@ -39,7 +39,13 @@ setEingeloggt(true)
 }
 
 return (
-<main className="min-h-screen bg-black text-white flex flex-col items-center p-10">
+<main
+className="min-h-screen bg-cover bg-center text-white"
+style={{
+backgroundImage:
+"url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2070&auto=format&fit=crop')",
+}}
+>
 
 <h1 className="text-6xl font-bold text-yellow-400 mb-4">
 WM Tippspiel 2026
