@@ -149,8 +149,8 @@ disabled={gesperrt}
 onClick={() =>
 speichern(
 spiel.id,
-tipps[index]?.heim || "",
-tipps[index]?.gast || ""
+tipps[spiel.id]?.heim || "",
+tipps[spiel.id]?.gast || ""
 )
 }
 className="bg-yellow-400 text-black px-4 py-2 rounded-xl font-bold disabled:opacity-40"
