@@ -6,36 +6,24 @@ import { supabase } from "@/lib/supabase"
 
 export default function Home() {
 
-const [name, setName] = useState("")
-const [spieler, setSpieler] = useState("")
+const [email, setEmail] = useState("")
+const [password, setPassword] = useState("")
 const [eingeloggt, setEingeloggt] = useState(false)
 
-const handleLogin = async () => {
+const handleRegister = async () => {
+const { error } = await supabase.auth.signUp({
+email,
+password,
+})
 
-if (!name || !spieler) {
-alert("Bitte alle Felder ausfüllen")
+if (error) {
+alert(error.message)
 return
 }
-localStorage.setItem("wm_name", name)
-localStorage.setItem("wm_spieler", spieler)
 
-const existingUser = await supabase
-.from("users")
-.select("*")
-.eq("name", name)
-.single()
+alert("Registrierung erfolgreich")
+}
 
-if (!existingUser.data) {
-await supabase
-.from("users")
-.insert([
-{
-name,
-favorite_player: spieler
-}
-])
-}
-setEingeloggt(true)
 }
 
 return (
@@ -64,18 +52,18 @@ Anmeldung
 </h2>
 
 <input
-type="text"
-placeholder="Dein Name"
-value={name}
+type="email"
+placeholder="E-Mail"
+value={email}
 onChange={(e) => setName(e.target.value)}
 className="w-full p-4 rounded-xl text-black mb-4"
 />
 
 <input
-type="text"
-placeholder="Lieblingsspieler (Nachname)"
-value={spieler}
-onChange={(e) => setSpieler(e.target.value)}
+type="password"
+placeholder="Passwort"
+value={password}
+onChange={(e) => setPassword(e.target.value)}
 className="w-full p-4 rounded-xl text-black mb-6"
 />
 
