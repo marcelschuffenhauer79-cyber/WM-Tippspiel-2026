@@ -2,10 +2,10 @@
 
 import { supabase } from "@/lib/supabase" 
 import { spiele } from "@/data/spiele" 
-import { useState } from "react"
-
+import { useEffect, useState } from "react"
 
 export default function Tipps() {
+
 
 const [tipps, setTipps] = useState<{
 [key: number]: {
@@ -13,6 +13,29 @@ heim: string
 gast: string
 }
 }>({})
+
+useEffect(() => {
+ladeTipps()
+}, [])
+
+const ladeTipps = async () => {
+const { data } = await supabase
+.from("tipps")
+.select("*")
+
+if (data) {
+const formatierteTipps: any = {}
+
+data.forEach((tipp: any) => {
+formatierteTipps[tipp.match_id] = {
+heim: tipp.home_goals?.toString() || "",
+gast: tipp.away_goals?.toString() || "",
+}
+})
+
+setTipps(formatierteTipps)
+}
+}
 
 const speichern = async (
 spielId: number,
