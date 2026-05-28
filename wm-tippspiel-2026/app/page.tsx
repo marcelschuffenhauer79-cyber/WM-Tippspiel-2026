@@ -34,7 +34,7 @@ backgroundImage:
 >
 
 <h1 className="text-6xl font-bold text-yellow-400 mb-4">
-WM Tippspiel 2026
+Neues Login Test
 </h1>
 
 <p className="text-xl text-zinc-300 mb-10">
