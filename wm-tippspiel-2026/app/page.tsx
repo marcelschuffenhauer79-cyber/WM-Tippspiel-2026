@@ -55,7 +55,7 @@ Anmeldung
 type="email"
 placeholder="E-Mail"
 value={email}
-onChange={(e) => setName(e.target.value)}
+onChange={(e) => setEmail(e.target.value)}
 className="w-full p-4 rounded-xl text-black mb-4"
 />
 
