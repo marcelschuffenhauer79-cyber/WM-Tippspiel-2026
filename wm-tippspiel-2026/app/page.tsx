@@ -97,7 +97,16 @@ Willkommen {email} 👋
 <p className="text-zinc-300 text-xl">
 Du bist erfolgreich eingeloggt.
 </p>
-
+<button
+onClick={async () => {
+await supabase.auth.signOut()
+setEingeloggt(false)
+alert("Erfolgreich ausgeloggt")
+}}
+className="mt-6 bg-red-500 hover:bg-red-400 text-white font-bold py-3 px-6 rounded-xl"
+>
+Logout
+</button>
 </div>
 
 )}
