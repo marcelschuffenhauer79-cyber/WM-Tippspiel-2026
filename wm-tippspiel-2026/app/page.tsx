@@ -33,7 +33,7 @@ if (error) {
 alert(error.message)
 return
 }
-
+setEingeloggt (true)
 alert("Erfolgreich eingeloggt")
 }
 return (
