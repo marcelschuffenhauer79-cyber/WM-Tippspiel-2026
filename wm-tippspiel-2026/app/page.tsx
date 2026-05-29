@@ -78,7 +78,7 @@ className="w-full p-4 rounded-xl text-black mb-6"
 />
 
 <button
-onClick={handleLogin}
+onClick={handleRegister}
 className="w-full bg-yellow-400 text-black font-bold py-4 rounded-xl hover:bg-yellow-300 transition"
 >
 Einloggen
